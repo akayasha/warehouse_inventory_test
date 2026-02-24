@@ -18,7 +18,7 @@ It’s built with a clean, layered architecture and modern Java standards to ens
 
 1. **Clone the project**
 ```bash
-git clone https://github.com/akayasha/warehouse_inventory_test/tree/master/src
+git clone https://github.com/akayasha/warehouse_inventory_test.git
 cd warehouse_inventory_test
 
 ```
