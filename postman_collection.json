@@ -1,0 +1,66 @@
+{
+  "info": {
+    "_postman_id": "warehouse-inventory-sample",
+    "name": "Warehouse Inventory API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Item",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"T-Shirt\",\n  \"description\": \"Plain white t-shirt\",\n  \"variants\": [\n    {\n      \"sku\": \"TSHIRT-WHT-S\",\n      \"size\": \"S\",\n      \"color\": \"White\",\n      \"stock\": { \"quantity\": 100 },\n      \"prices\": [{ \"amount\": 1999, \"currency\": \"USD\" }]\n    }\n  ]\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/items", "host": ["{{baseUrl}}"], "path": ["api","items"] }
+      }
+    },
+    {
+      "name": "Get Item by ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/items/:id", "host": ["{{baseUrl}}"], "path": ["api","items",":id"] }
+      }
+    },
+    {
+      "name": "Create Variant",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"sku\": \"TSHIRT-WHT-M\",\n  \"size\": \"M\",\n  \"color\": \"White\",\n  \"stock\": { \"quantity\": 50 },\n  \"prices\": [{ \"amount\": 2099, \"currency\": \"USD\" }]\n}" },
+        "url": { "raw": "{{baseUrl}}/api/variants/item/:itemId", "host": ["{{baseUrl}}"], "path": ["api","variants","item",":itemId"] }
+      }
+    },
+    {
+      "name": "Search Variants by SKU",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{baseUrl}}/api/variants/search?sku=TSHIRT", "host": ["{{baseUrl}}"], "path": ["api","variants","search"], "query": [{"key":"sku","value":"TSHIRT"}] }
+      }
+    },
+    {
+      "name": "Add Stock",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"quantity\": 10 }" },
+        "url": { "raw": "{{baseUrl}}/api/inventory/:variantId/add", "host": ["{{baseUrl}}"], "path": ["api","inventory",":variantId","add"] }
+      }
+    },
+    {
+      "name": "Sell Stock",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"quantity\": 2 }" },
+        "url": { "raw": "{{baseUrl}}/api/inventory/:variantId/sell", "host": ["{{baseUrl}}"], "path": ["api","inventory",":variantId","sell"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ]
+}
+

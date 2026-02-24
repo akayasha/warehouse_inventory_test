@@ -1,0 +1,25 @@
+{
+  "createItem": {
+    "name": "T-Shirt",
+    "description": "Plain white t-shirt",
+    "variants": [
+      {
+        "sku": "TSHIRT-WHT-S",
+        "size": "S",
+        "color": "White",
+        "stock": { "quantity": 100 },
+        "prices": [{ "amount": 1999, "currency": "USD" }]
+      }
+    ]
+  },
+  "createVariant": {
+    "sku": "TSHIRT-BLK-M",
+    "size": "M",
+    "color": "Black",
+    "stock": { "quantity": 50 },
+    "prices": [{ "amount": 2199, "currency": "USD" }]
+  },
+  "addStock": { "quantity": 10 },
+  "sellStock": { "quantity": 2 }
+}
+
