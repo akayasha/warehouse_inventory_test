@@ -136,5 +136,3 @@ The project includes unit tests using **JUnit 5** and **Mockito**, alongside int
 * **Integrity:** Database constraints ensure SKUs remain unique across the entire warehouse.
 
 ---
-
-Would you like me to generate a **Docker Compose** file so you can spin up the MySQL database and the app with a single command?
